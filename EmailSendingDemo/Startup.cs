@@ -61,7 +61,7 @@ namespace EmailSendingDemo
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Email}/{action=SendEmailDemo}/{id?}");
             });
         }
     }
