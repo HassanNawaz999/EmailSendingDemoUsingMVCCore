@@ -26,20 +26,20 @@ namespace EmailSendingDemo.Controllers
                 //using below line your email also able to read html text
                 dEmail.IsBodyHtml = true;
 
-                dEmail.To.Add(new MailAddress("hassanjee9548@gmail.com")); //receiver Name
-                dEmail.CC.Add(new MailAddress("tahirbilalnawaz@gmail.com"));
-
+                dEmail.To.Add(new MailAddress("hassan@gmail.com")); //receiver Name
+                dEmail.CC.Add(new MailAddress("tahir@gmail.com"));
+                //here is sender email and Name
                 dEmail.From = new MailAddress("hassan373635@gmail.com", "Hassan Nawaz");
                 //here are we are using smtp sever that is used for sending email
 
                 SmtpClient dSmtp = new SmtpClient();
-                //mostly these three ports used for this
+                //mostly these three ports used for this , here is am using port 587
                 dSmtp.Port = 587; //25,465
                 dSmtp.EnableSsl = true;
                 //here is google smptp sever link that provides almost 250 free email daily
                 dSmtp.Host = "smtp.gmail.com";
-
-                dSmtp.Credentials = new System.Net.NetworkCredential("hassan373635@gmail.com", "Hass+373635");
+                // //here is sender email and password
+                dSmtp.Credentials = new System.Net.NetworkCredential("abc@gmail.com", "password");
                 dSmtp.Send(dEmail);
             }
             catch(Exception ex)
